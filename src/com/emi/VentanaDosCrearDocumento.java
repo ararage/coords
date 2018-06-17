@@ -5,6 +5,10 @@
  */
 package com.emi;
 
+import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author ararage
@@ -116,7 +120,11 @@ public class VentanaDosCrearDocumento extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        new IngresarPista().setVisible(true);
+        try {
+            new IngresarPista().setVisible(true);
+        } catch (ParseException ex) {
+            Logger.getLogger(VentanaDosCrearDocumento.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 

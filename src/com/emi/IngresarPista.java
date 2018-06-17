@@ -10,8 +10,13 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
@@ -30,7 +35,7 @@ public class IngresarPista extends javax.swing.JFrame {
     /**
      * Creates new form IngresarPista
      */
-    public IngresarPista() {
+    public IngresarPista() throws ParseException {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
@@ -64,6 +69,21 @@ public class IngresarPista extends javax.swing.JFrame {
         } catch (FileNotFoundException ex) {
             Logger.getLogger(IngresarPista.class.getName()).log(Level.SEVERE, null, ex);
         }
+        this.jLabel3.setText(this.createNewDate());
+        //System.out.print(reportDate);
+    }
+    
+    private String createNewDate() throws ParseException{
+        DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+        String reportDate = df.format(Calendar.getInstance().getTime());
+        return df.format(addDays(df.parse(reportDate), 50));
+    }
+    
+    private Date addDays(Date date, int days){
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        cal.add(Calendar.DATE, days); //minus number would decrement the days
+        return cal.getTime();
     }
     
     public void getLastData() throws FileNotFoundException{

@@ -139,11 +139,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        try {
-            new IngresarPista().setVisible(true);
-        } catch (ParseException ex) {
-            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        new VerDocumentos().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 

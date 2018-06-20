@@ -79,41 +79,22 @@ public class IngresarPista extends javax.swing.JFrame {
         this.jComboBox3.setModel(new DefaultComboBoxModel(this.regiones.toArray()));
 
         try {
+            /*try {
             this.getLastData();
+            } catch (FileNotFoundException ex) {
+            Logger.getLogger(IngresarPista.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            this.jLabel3.setText(this.createNewDate());
+            //System.out.print(reportDate);*/
+            String arr = Utils.getLastData();
+            this.jLabel1.setText("F.C.A.: "+arr.split("\\|")[0]);
+            this.jLabel2.setText("T.I.: "+arr.split("\\|")[3]);
+            this.jLabel3.setText(Utils.createNewDate());
         } catch (FileNotFoundException ex) {
             Logger.getLogger(IngresarPista.class.getName()).log(Level.SEVERE, null, ex);
         }
-        this.jLabel3.setText(this.createNewDate());
-        //System.out.print(reportDate);
     }
     
-    private String createNewDate() throws ParseException{
-        DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
-        String reportDate = df.format(Calendar.getInstance().getTime());
-        return df.format(addDays(df.parse(reportDate), 50));
-    }
-    
-    private Date addDays(Date date, int days){
-        Calendar cal = Calendar.getInstance();
-        cal.setTime(date);
-        cal.add(Calendar.DATE, days); //minus number would decrement the days
-        return cal.getTime();
-    }
-    
-    public void getLastData() throws FileNotFoundException{
-        String content = "";
-        try {
-            content = new String(Files.readAllBytes(Paths.get("temp.dat")));
-        } catch (IOException ex) {
-            Logger.getLogger(IngresarPista.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        String valor = content.split("\\r?\\n")[content.split("\\r?\\n").length - 1];
-        System.out.print(valor);
-        this.jLabel1.setText("F.C.A.: "+valor.split("\\|")[0]);
-        this.jLabel2.setText("T.I.: "+valor.split("\\|")[3]);
-        
-    }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -188,6 +169,11 @@ public class IngresarPista extends javax.swing.JFrame {
         jLabel11.setText("Observaciones:");
 
         jButton2.setText("Siguiente");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jMenu1.setText("Archivo");
 
@@ -357,6 +343,11 @@ public class IngresarPista extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        new VerDocumentos().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

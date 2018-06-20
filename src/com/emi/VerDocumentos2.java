@@ -5,22 +5,24 @@
  */
 package com.emi;
 
-import java.text.ParseException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JFormattedTextField;
+import javax.swing.JTable;
+import javax.swing.ListSelectionModel;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.text.MaskFormatter;
 
 /**
  *
  * @author ararage
  */
-public class VerDocumentos extends javax.swing.JFrame {
+public class VerDocumentos2 extends javax.swing.JFrame {
 
     /**
      * Creates new form VerDocumentos
      */
-    public VerDocumentos() {
+    public VerDocumentos2() {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
@@ -68,11 +70,6 @@ public class VerDocumentos extends javax.swing.JFrame {
         });
 
         jButton2.setText("Volver");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -85,6 +82,11 @@ public class VerDocumentos extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -144,28 +146,25 @@ public class VerDocumentos extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"S-1(M-1)/OPS/9021", "Cerrado"},
-                {"S-1(M-1)/OPS/9022", "Vigente"},
-                {"S-1(M-1)/OPS/9023", "Vigente"},
-                {"S-1(M-1)/OPS/9024", "Cerrado"},
-            },
-            new String [] {
-                "F.C.A. Encontrada", "Status"
-            }
+                new Object[][]{
+                    {"S-1(M-1)/OPS/9021", "Cerrado"},
+                    {"S-1(M-1)/OPS/9022", "Vigente"},
+                    {"S-1(M-1)/OPS/9023", "Vigente"},
+                    {"S-1(M-1)/OPS/9024", "Cerrado"},},
+                new String[]{
+                    "F.C.A. Encontrada", "Status"
+                }
         ));
         jScrollPane1.setViewportView(jTable1);
         jTable1.setVisible(true);
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        try {
-            new IngresarPista().setVisible(true);
-        } catch (ParseException ex) {
-            Logger.getLogger(VerDocumentos.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        int selectedRowIndex = jTable1.getSelectedRow();
+        System.out.print(model.getValueAt(selectedRowIndex, 0).toString());
+    }//GEN-LAST:event_jTable1MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

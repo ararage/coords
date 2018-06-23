@@ -8,13 +8,13 @@ public class VerCoordenada2 extends javax.swing.JFrame {
         setResizable(false);
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1. 14QMS1234567890", "Cerrado"},
-                {"2. 14QMS1234567890", "Vigente"},
-                {"3. 14QMS1234567890", "Vigente"},
-                {"4. 14QMS1234567890", "Vigente"},
+                {"14QMS1234567891", "42543"},
+                {"14QMS1234567892", "42543"},
+                {"14QMS1234567893", "42543"},
+                {"14QMS1234567894", "42543"},
             },
             new String [] {
-                "Coordenada", "Cerrado o Vigente"
+                "Coordenada", "T.I."
             }
         ));
         jScrollPane1.setViewportView(jTable1);

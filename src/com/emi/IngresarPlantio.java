@@ -21,7 +21,7 @@ public class IngresarPlantio extends javax.swing.JFrame {
     
     List<String> analistas;
     List<String> zonas;
-    List<String> regiones;
+    List<String> enervantes;
     
     public IngresarPlantio() throws ParseException {
         initComponents();
@@ -29,12 +29,9 @@ public class IngresarPlantio extends javax.swing.JFrame {
         setResizable(false);
         this.analistas = new ArrayList<String>();
         this.zonas = new ArrayList<String>();
-        this.regiones = new ArrayList<String>();
+        this.enervantes = new ArrayList<String>();
         for(int i = 1; i < 13; i++){
             this.analistas.add("A"+i);
-        }
-        for(int i = 1; i < 45; i++){
-            this.regiones.add(i+"/a");
         }
         this.zonas.add("I");
         this.zonas.add("II");
@@ -48,9 +45,13 @@ public class IngresarPlantio extends javax.swing.JFrame {
         this.zonas.add("X");
         this.zonas.add("XI");
         this.zonas.add("XII");
+        
+        this.enervantes.add("Mariguana");
+        this.enervantes.add("Amapola");
+        
         this.jComboBox1.setModel(new DefaultComboBoxModel(this.analistas.toArray()));
         this.jComboBox2.setModel(new DefaultComboBoxModel(this.zonas.toArray()));
-        this.jComboBox3.setModel(new DefaultComboBoxModel(this.regiones.toArray()));
+        this.jComboBox3.setModel(new DefaultComboBoxModel(this.enervantes.toArray()));
 
         try {
             String arr = Utils.getLastData();
@@ -86,8 +87,9 @@ public class IngresarPlantio extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -142,17 +144,25 @@ public class IngresarPlantio extends javax.swing.JFrame {
             }
         });
 
-        jMenu1.setText("Archivo");
+        jMenu3.setText("Archivo");
 
-        jMenuItem1.setText("Cerrar Sesión");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem3.setText("Volver");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                jMenuItem3ActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        jMenu3.add(jMenuItem3);
 
-        jMenuBar1.add(jMenu1);
+        jMenuItem2.setText("Cerrar Sesión");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem2);
+
+        jMenuBar1.add(jMenu3);
 
         setJMenuBar(jMenuBar1);
 
@@ -258,11 +268,6 @@ public class IngresarPlantio extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        new Login().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         JFileChooser fileChooser = new JFileChooser();
         if(fileChooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) { 
@@ -304,13 +309,23 @@ public class IngresarPlantio extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        new VerDocumentos().setVisible(true);
+        new VerDocumentos(2).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox3ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        new Login().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        new VentanaDosCrearDocumento().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -330,9 +345,10 @@ public class IngresarPlantio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables

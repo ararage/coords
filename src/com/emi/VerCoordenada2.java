@@ -29,6 +29,10 @@ public class VerCoordenada2 extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,6 +58,28 @@ public class VerCoordenada2 extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
+        jMenu3.setText("Archivo");
+
+        jMenuItem1.setText("Menu Principal");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem1);
+
+        jMenuItem2.setText("Cerrar Sesión");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem2);
+
+        jMenuBar1.add(jMenu3);
+
+        setJMenuBar(jMenuBar1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -75,7 +101,7 @@ public class VerCoordenada2 extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(43, 43, 43)
                 .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton2)
@@ -89,10 +115,24 @@ public class VerCoordenada2 extends javax.swing.JFrame {
         new VerCoordenada().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        new Menu().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        new Login().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables

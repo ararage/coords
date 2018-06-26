@@ -62,7 +62,6 @@ public class CrearDocumento extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
 
         jMenu1.setText("jMenu1");
 
@@ -150,9 +149,6 @@ public class CrearDocumento extends javax.swing.JFrame {
         jMenu3.add(jMenuItem2);
 
         jMenuBar1.add(jMenu3);
-
-        jMenu4.setText("Ayuda");
-        jMenuBar1.add(jMenu4);
 
         setJMenuBar(jMenuBar1);
 
@@ -358,7 +354,6 @@ public class CrearDocumento extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;

@@ -17,7 +17,6 @@ public class Menu extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -54,13 +53,6 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel1.setText("Sistema de Control y Seguimiento de Coordenadas");
 
-        jButton5.setText("jButton5");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-
         jMenu1.setText("Archivo");
 
         jMenuItem1.setText("Cerrar Sesión");
@@ -91,13 +83,8 @@ public class Menu extends javax.swing.JFrame {
                         .addGap(16, 16, 16))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(80, 80, 80))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jButton5)
-                                .addGap(34, 34, 34))))))
+                        .addComponent(jLabel1)
+                        .addGap(80, 80, 80))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -112,8 +99,7 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                .addComponent(jButton5))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
         pack();
@@ -125,7 +111,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        new VerDocumentos().setVisible(true);
+        new VerDocumentos(0).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -144,17 +130,11 @@ public class Menu extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        new VerDocumentos().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jButton5ActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;

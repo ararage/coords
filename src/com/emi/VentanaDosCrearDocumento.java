@@ -23,6 +23,7 @@ public class VentanaDosCrearDocumento extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -30,6 +31,11 @@ public class VentanaDosCrearDocumento extends javax.swing.JFrame {
         jLabel1.setText("Sistema de Control y Seguimiento de Coordenadas");
 
         jButton1.setText("Ver T.I.");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Ingresar Plantios");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -46,6 +52,14 @@ public class VentanaDosCrearDocumento extends javax.swing.JFrame {
         });
 
         jMenu1.setText("Archivo");
+
+        jMenuItem2.setText("Menu Principal");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem2);
 
         jMenuItem1.setText("Cerrar Sesión");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -99,7 +113,12 @@ public class VentanaDosCrearDocumento extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
+        try {
+            new IngresarPlantio().setVisible(true);
+        } catch (ParseException ex) {
+            Logger.getLogger(VentanaDosCrearDocumento.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -111,6 +130,20 @@ public class VentanaDosCrearDocumento extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try {
+            new VerTI().setVisible(true);
+        } catch (ParseException ex) {
+            Logger.getLogger(VentanaDosCrearDocumento.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        new Menu().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -119,6 +152,7 @@ public class VentanaDosCrearDocumento extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JProgressBar jProgressBar1;
     // End of variables declaration//GEN-END:variables
 }

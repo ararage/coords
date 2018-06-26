@@ -7,11 +7,12 @@ import javax.swing.JFormattedTextField;
 import javax.swing.text.MaskFormatter;
 
 public class VerDocumentos extends javax.swing.JFrame {
-
-    public VerDocumentos() {
+    int bandera = 0;
+    public VerDocumentos(int bandera) {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
+        this.bandera = bandera;
     }
 
     @SuppressWarnings("unchecked")
@@ -27,6 +28,9 @@ public class VerDocumentos extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -79,6 +83,20 @@ public class VerDocumentos extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(jTable1);
+
+        jMenu3.setText("Archivo");
+
+        jMenuItem2.setText("Cerrar Sesión");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem2);
+
+        jMenuBar1.add(jMenu3);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -155,11 +173,17 @@ public class VerDocumentos extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         try {
-            new IngresarPista().setVisible(true);
+            if(this.bandera == 0){
+                new Menu().setVisible(true);
+            }else if(this.bandera == 1){
+                new IngresarPista().setVisible(true);
+            }else if(this.bandera == 2){
+                new IngresarPlantio().setVisible(true);
+            }
+            this.dispose();
         } catch (ParseException ex) {
             Logger.getLogger(VerDocumentos.class.getName()).log(Level.SEVERE, null, ex);
         }
-        this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTable1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTable1KeyPressed
@@ -167,10 +191,14 @@ public class VerDocumentos extends javax.swing.JFrame {
     }//GEN-LAST:event_jTable1KeyPressed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
-        System.out.print("DEDEDE");
-        new VerDocumentos2().setVisible(true);
+        new VerDocumentos2(this.bandera).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jTable1MouseClicked
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        new Login().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -180,6 +208,9 @@ public class VerDocumentos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;

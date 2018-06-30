@@ -1,6 +1,7 @@
 package com.emi.admin;
 
 import com.emi.main.Login;
+import com.emi.user.VerDocumentosTodos;
 
 public class Reporte extends javax.swing.JFrame {
     /*
@@ -8,12 +9,13 @@ public class Reporte extends javax.swing.JFrame {
     tipo: 0 pista, 1 plantio
     estatus:0 pendiente, 1 informado
     */
+    private int perfil;
     public Reporte(int perfil, int tipo, int estatus) {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
         initBlanks();
-        
+        this.perfil = perfil;
         this.jLabel2.setText("FCA: ");
         this.jLabel4.setText("No: ");
         this.jLabel6.setText("Días restantes: ");
@@ -437,7 +439,11 @@ public class Reporte extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        new Menu().setVisible(true);
+        if(this.perfil == 0){
+            new VerDocumentos2(0).setVisible(true);
+        }else{
+            new VerDocumentosTodos(0).setVisible(true);
+        }
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 

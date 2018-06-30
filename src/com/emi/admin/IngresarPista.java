@@ -267,11 +267,8 @@ public class IngresarPista extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         JFileChooser fileChooser = new JFileChooser();
         if(fileChooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) { 
-            System.out.println("ESTO MERENGUES");
             String path=fileChooser.getSelectedFile().getAbsolutePath();
             String filename=fileChooser.getSelectedFile().getName();
-            System.out.println(path);
-            System.out.println(filename);
             if(filename.split("\\.")[1].equals("xls")){
                 try{
                     //File selectedFile = new File(path);
@@ -291,12 +288,10 @@ public class IngresarPista extends javax.swing.JFrame {
                             if(i == 0){
                                 Cell cell = cellIterator.next();
                                 String cellValue = dataFormatter.formatCellValue(cell);
-                                System.out.print(cellValue + "\t");
                                 this.jFormattedTextField2.setValue(cellValue);
                                 break;
                             }
                         }
-                        System.out.println();
                     }
                 }catch(Exception e){
                 }

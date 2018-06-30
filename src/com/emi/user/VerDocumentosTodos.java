@@ -1,6 +1,8 @@
 package com.emi.user;
 
+import com.emi.admin.Reporte;
 import com.emi.main.Login;
+import javax.swing.event.ListSelectionEvent;
 import javax.swing.table.DefaultTableModel;
 
 public class VerDocumentosTodos extends javax.swing.JFrame {
@@ -12,9 +14,9 @@ public class VerDocumentosTodos extends javax.swing.JFrame {
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
                 new Object[][]{
                     {"14QNS2630465377", "I", ""},
-                    {"14QNS2630465377", "II", ""},
-                    {"14QNS2630465377", "III", ""},
-                    {"14QNS2630465377", "IV", ""},},
+                    {"14QNS2630465378", "II", ""},
+                    {"14QNS2630465379", "III", ""},
+                    {"14QNS2630465380", "IV", ""},},
                 new String[]{
                     "Coordenada", "Región", "Zona"
                 }
@@ -24,9 +26,9 @@ public class VerDocumentosTodos extends javax.swing.JFrame {
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
                 new Object[][]{
                     {"14QNS2630465377"},
-                    {"14QNS2630465377"},
-                    {"14QNS2630465377"},
-                    {"14QNS2630465377"},},
+                    {"14QNS2630465378"},
+                    {"14QNS2630465379"},
+                    {"14QNS2630465380"},},
                 new String[]{
                     "Coordenada"
                 }
@@ -34,6 +36,32 @@ public class VerDocumentosTodos extends javax.swing.JFrame {
         jScrollPane3.setViewportView(jTable3);
         jTable3.setVisible(true);
         this.bandera = bandera;
+        
+        jTable1.getSelectionModel().addListSelectionListener((ListSelectionEvent event) -> {
+            if(jTable1.getValueAt(jTable1.getSelectedRow(), 0).toString().equals("14QNS2630465377")){
+                new Reporte(1,1,1).setVisible(true);
+                this.dispose();
+            }else if(jTable1.getValueAt(jTable1.getSelectedRow(), 0).toString().equals("14QNS2630465378")){
+                new Reporte(1,1,1).setVisible(true);
+                this.dispose();
+            }else{
+                new Reporte(1,1,0).setVisible(true);
+                this.dispose();
+            }
+        });
+        
+        jTable3.getSelectionModel().addListSelectionListener((ListSelectionEvent event) -> {
+            if(jTable3.getValueAt(jTable3.getSelectedRow(), 0).toString().equals("14QNS2630465377")){
+                new Reporte(1,0,1).setVisible(true);
+                this.dispose();
+            }else if(jTable3.getValueAt(jTable3.getSelectedRow(), 0).toString().equals("14QNS2630465378")){
+                new Reporte(1,0,1).setVisible(true);
+                this.dispose();
+            }else{
+                new Reporte(1,0,0).setVisible(true);
+                this.dispose();
+            }
+        });
     }
 
     @SuppressWarnings("unchecked")
@@ -50,6 +78,7 @@ public class VerDocumentosTodos extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
+        jLabel7 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -110,6 +139,8 @@ public class VerDocumentosTodos extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(jTable3);
 
+        jLabel7.setText("V R.M");
+
         jMenu3.setText("Archivo");
 
         jMenuItem1.setText("Menu Principal");
@@ -141,7 +172,7 @@ public class VerDocumentosTodos extends javax.swing.JFrame {
                 .addComponent(jButton2)
                 .addGap(44, 44, 44))
             .addGroup(layout.createSequentialGroup()
-                .addGap(61, 61, 61)
+                .addGap(60, 60, 60)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel4)
@@ -151,32 +182,37 @@ public class VerDocumentosTodos extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 544, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(104, 104, 104)
-                        .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel5))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel6)))
+                        .addComponent(jLabel6))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(114, 114, 114)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(255, 255, 255)
+                        .addComponent(jLabel7)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane3)
-                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(37, 37, 37)
+                .addGap(16, 16, 16)
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel7)
+                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel4))
-                .addGap(45, 45, 45)
+                .addGap(30, 30, 30)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -225,6 +261,7 @@ public class VerDocumentosTodos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;

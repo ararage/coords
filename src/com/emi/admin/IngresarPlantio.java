@@ -273,11 +273,8 @@ public class IngresarPlantio extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         JFileChooser fileChooser = new JFileChooser();
         if(fileChooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) { 
-            System.out.println("ESTO MERENGUES");
             String path=fileChooser.getSelectedFile().getAbsolutePath();
             String filename=fileChooser.getSelectedFile().getName();
-            System.out.println(path);
-            System.out.println(filename);
             if(filename.split("\\.")[1].equals("xls")){
                 try{
                     //File selectedFile = new File(path);
@@ -302,7 +299,6 @@ public class IngresarPlantio extends javax.swing.JFrame {
                                 break;
                             }
                         }
-                        System.out.println();
                     }
                 }catch(Exception e){
                 }

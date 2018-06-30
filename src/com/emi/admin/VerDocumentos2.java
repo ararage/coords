@@ -1,6 +1,7 @@
 package com.emi.admin;
 
 import com.emi.main.Login;
+import javax.swing.event.ListSelectionEvent;
 import javax.swing.table.DefaultTableModel;
 
 public class VerDocumentos2 extends javax.swing.JFrame {
@@ -12,9 +13,9 @@ public class VerDocumentos2 extends javax.swing.JFrame {
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
                 new Object[][]{
                     {"14QNS2630465377", "I", ""},
-                    {"14QNS2630465377", "II", ""},
-                    {"14QNS2630465377", "III", ""},
-                    {"14QNS2630465377", "IV", ""},},
+                    {"14QNS2630465378", "II", ""},
+                    {"14QNS2630465379", "III", ""},
+                    {"14QNS2630465380", "IV", ""},},
                 new String[]{
                     "Coordenada", "Región", "Zona"
                 }
@@ -24,9 +25,9 @@ public class VerDocumentos2 extends javax.swing.JFrame {
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
                 new Object[][]{
                     {"14QNS2630465377"},
-                    {"14QNS2630465377"},
-                    {"14QNS2630465377"},
-                    {"14QNS2630465377"},},
+                    {"14QNS2630465378"},
+                    {"14QNS2630465379"},
+                    {"14QNS2630465380"},},
                 new String[]{
                     "Coordenada"
                 }
@@ -34,6 +35,32 @@ public class VerDocumentos2 extends javax.swing.JFrame {
         jScrollPane3.setViewportView(jTable3);
         jTable3.setVisible(true);
         this.bandera = bandera;
+        
+        jTable1.getSelectionModel().addListSelectionListener((ListSelectionEvent event) -> {
+            if(jTable1.getValueAt(jTable1.getSelectedRow(), 0).toString().equals("14QNS2630465377")){
+                new Reporte(0,1,1).setVisible(true);
+                this.dispose();
+            }else if(jTable1.getValueAt(jTable1.getSelectedRow(), 0).toString().equals("14QNS2630465378")){
+                new Reporte(0,1,1).setVisible(true);
+                this.dispose();
+            }else{
+                new Reporte(0,1,0).setVisible(true);
+                this.dispose();
+            }
+        });
+        
+        jTable3.getSelectionModel().addListSelectionListener((ListSelectionEvent event) -> {
+            if(jTable3.getValueAt(jTable3.getSelectedRow(), 0).toString().equals("14QNS2630465377")){
+                new Reporte(0,0,1).setVisible(true);
+                this.dispose();
+            }else if(jTable3.getValueAt(jTable3.getSelectedRow(), 0).toString().equals("14QNS2630465378")){
+                new Reporte(0,0,1).setVisible(true);
+                this.dispose();
+            }else{
+                new Reporte(0,0,0).setVisible(true);
+                this.dispose();
+            }
+        });
     }
 
     @SuppressWarnings("unchecked")
@@ -223,7 +250,6 @@ public class VerDocumentos2 extends javax.swing.JFrame {
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
         int selectedRowIndex = jTable1.getSelectedRow();
-        System.out.print(model.getValueAt(selectedRowIndex, 0).toString());
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void jTable3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable3MouseClicked
@@ -253,7 +279,7 @@ public class VerDocumentos2 extends javax.swing.JFrame {
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
                 new Object[][]{
                     {"14QNS2630465377", "I", ""},
-                    {"14QNS2630465377", "II", ""}},
+                    {"14QNS2630465378", "II", ""}},
                 new String[]{
                     "Coordenada", "Región", "Zona"
                 }
@@ -263,7 +289,7 @@ public class VerDocumentos2 extends javax.swing.JFrame {
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
                 new Object[][]{
                     {"14QNS2630465377"},
-                    {"14QNS2630465377"},},
+                    {"14QNS2630465378"},},
                 new String[]{
                     "Coordenada"
                 }

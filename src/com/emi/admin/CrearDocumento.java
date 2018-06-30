@@ -334,7 +334,6 @@ public class CrearDocumento extends javax.swing.JFrame {
             String content;
             try {
                 content = new String(Files.readAllBytes(Paths.get("temp.dat")));
-                System.out.println(content);
                 Files.write(Paths.get("temp.dat"), fca.getBytes(), StandardOpenOption.APPEND);
             } catch (IOException ex) {
                 Logger.getLogger(CrearDocumento.class.getName()).log(Level.SEVERE, null, ex);

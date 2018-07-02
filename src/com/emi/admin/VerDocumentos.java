@@ -14,6 +14,15 @@ public class VerDocumentos extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         this.bandera = bandera;
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+            },
+            new String [] {
+                "F.C.A. Encontrada", "Status"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+        jTable1.setVisible(true);
     }
 
     @SuppressWarnings("unchecked")

@@ -15,6 +15,18 @@ import java.util.logging.Logger;
 
 public final class Utils {
     
+    public static String today() throws ParseException{
+        DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+        String reportDate = df.format(Calendar.getInstance().getTime());
+        return df.format(addDays(df.parse(reportDate), 0));
+    }
+    
+    public static String tomorrow() throws ParseException{
+        DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+        String reportDate = df.format(Calendar.getInstance().getTime());
+        return df.format(addDays(df.parse(reportDate), 1));
+    }
+    
     public static String createNewDate() throws ParseException{
         DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
         String reportDate = df.format(Calendar.getInstance().getTime());

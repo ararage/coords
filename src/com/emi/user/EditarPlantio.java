@@ -21,7 +21,6 @@ public class EditarPlantio extends javax.swing.JFrame {
         this.niveles = new ArrayList<>();
         this.enervantes.add("Amapola");
         this.enervantes.add("Marigüana");
-        this.niveles.add("Nacional");
         this.niveles.add("Región I");
         this.niveles.add("Región II");
         this.niveles.add("Región III");

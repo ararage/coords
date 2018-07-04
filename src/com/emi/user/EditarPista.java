@@ -17,7 +17,6 @@ public class EditarPista extends javax.swing.JFrame {
         setResizable(false);
         this.bandera = bandera;
         this.niveles = new ArrayList<>();
-        this.niveles.add("Nacional");
         this.niveles.add("Región I");
         this.niveles.add("Región II");
         this.niveles.add("Región III");

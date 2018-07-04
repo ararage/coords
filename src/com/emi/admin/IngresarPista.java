@@ -35,9 +35,11 @@ public class IngresarPista extends javax.swing.JFrame {
         for(int i = 1; i < 13; i++){
             this.analistas.add("A"+i);
         }
-        for(int i = 1; i < 45; i++){
+        /*for(int i = 1; i < 45; i++){
             this.regiones.add(i+"/a");
-        }
+        }*/
+        this.regiones.add("9/a");
+        this.regiones.add("10/a");
         this.zonas.add("I");
         this.zonas.add("II");
         this.zonas.add("III");
@@ -107,7 +109,7 @@ public class IngresarPista extends javax.swing.JFrame {
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jLabel6.setText("Pista:");
+        jLabel6.setText("Zona:");
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 

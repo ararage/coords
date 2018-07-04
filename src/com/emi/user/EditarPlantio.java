@@ -21,19 +21,11 @@ public class EditarPlantio extends javax.swing.JFrame {
         this.niveles = new ArrayList<>();
         this.enervantes.add("Amapola");
         this.enervantes.add("Marigüana");
-        this.niveles.add("Región I");
-        this.niveles.add("Región II");
-        this.niveles.add("Región III");
-        this.niveles.add("Región IV");
-        this.niveles.add("Región V");
-        this.niveles.add("Región VI");
-        this.niveles.add("Región VII");
-        this.niveles.add("Región VIII");
-        this.niveles.add("Región IX");
-        this.niveles.add("Región X");
-        this.niveles.add("Región XI");
-        this.niveles.add("Región XII");
-        
+        this.niveles.add("13/a");
+        this.niveles.add("14/a");
+        this.niveles.add("15/a");
+        this.niveles.add("20/a");
+        this.niveles.add("21/a");
         this.jComboBox2.setModel(new DefaultComboBoxModel(this.enervantes.toArray()));
         this.jComboBox1.setModel(new DefaultComboBoxModel(this.niveles.toArray()));
     }
